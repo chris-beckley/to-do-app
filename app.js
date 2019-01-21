@@ -22,7 +22,9 @@ function onReady(){
     button.textContent = "Delete";
 
     // delete item
-    
+
+
+
 
     // set the input's type to checkbox
     checkbox.type = "checkbox";
@@ -35,6 +37,9 @@ function onReady(){
 
     // attach the li to the ul
     toDoList.appendChild(newLi);
+
+    // render delete button
+    newLi.appendChild(button);
 
     //empty the input
    newToDoText.value = '';
