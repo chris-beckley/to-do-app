@@ -11,11 +11,17 @@ function createNewToDo(){
   toDos.push({
     title: newToDoText.value,
     complete: false,
-    id: id++
+    id: id
   });
+
+  id++;
   newToDoText.value = '';
 
   renderTheUI();
+}
+
+function deleteToDo(id){
+    return toDos.filter(toDos => toDo.id !== id)
 }
 
 function renderTheUI(){
@@ -34,7 +40,13 @@ function renderTheUI(){
     toDoList.appendChild(newLi);
     newLi.appendChild(checkbox);
     newLi.appendChild(deleteButton);
+
+    deleteButton.addEventListener("click" , event => {
+      deleteToDo(id);
+      renderTheUI();
+      saveToDos();
   });
+
 
 }
 
