@@ -23,7 +23,16 @@ function onReady(){
 
     // delete item
 
-
+    button.addEventListener('click' , function(event){
+      let buttonLiText = this.parentElement.childNodes[0].textContent;
+      toDoList.removeChild(this.parentElement);
+      
+      toDos.forEach(function(currentToDo , index){
+        if(currentToDo === buttonLiText){
+          toDos.splice(index, 1);
+        }
+      });
+    })
 
 
     // set the input's type to checkbox
