@@ -22,8 +22,7 @@ function onReady(){
     button.textContent = "Delete";
 
     // delete item
-
-    button.addEventListener('click' , function(event){
+      button.addEventListener('click' , function(event){
       let buttonLiText = this.parentElement.childNodes[0].textContent;
       toDoList.removeChild(this.parentElement);
       
